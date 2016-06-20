@@ -4,10 +4,13 @@
 <head><title>Index page</title></head>
 
 <body>
-<p>This is index file page (webapp\WEB-INF\views\index.jsp).
-<p>Click button to try security!
-<p>Click me! (link to webbapp\login.jsp without security)
-    <a href="<c:url value="/views/"/>">Go!</a>
+<p>This is secondPage page (webapp\WEB-INF\views\secondPage.jsp).
+<p>without login you can't see it
+
+<form action="<c:url value="/logout"/>" method="post">
+    <input type="submit" value="Logoff"/> (also clears any remember-me cookie)
+    <security:csrfInput/>
+</form>
 
 </body>
 </html>

@@ -1,30 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
 
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Login Page</title>
+  <title>Title Login Page</title>
 </head>
-
 <body>
+<h1>Login page</h1>
+<p>Valid users:
+<p>username: <b>user</b>, password: <b>user</b></p>
+<p>username: <b>admin</b>, password: <b>adminp</b></p>
+<p>username: <b>guest</b>, password: <b>guest</b></p>
 
-<form method="POST" action="<%=request.getContextPath()%>/j_spring_security_check">
+<c:if test="${not empty param.login_error}">
+  <span style="color: red; ">
+    Your login attempt was not successful, try again.<br/><br/>
+    Reason: <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/>
+  </span>
+</c:if>
 
-  <label> Username: </label> <input value="" type="text" name="user_login"><br/>
-  <label> Password: </label> <input value="" type="text" name="password_login"><br/>
+<form name="frm" action="<c:url value='login'/>" method="post">
+  <table>
+    <tr> <td>User:</td> <td><input type="text" name="username"></td></tr>
 
-  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <tr><td>Password:</td> <td><input type="password" name="password"></td></tr>
 
-  <footer>
-    <input type="submit" value="Submit">
-    <c:if test="${not empty error}">
-      <span style="color:red">${error}</span>
-    </c:if>
-  </footer>
+    <tr><td colspan="2"><input name="submit" type="submit"></td></tr>
+    <tr><td colspan="2"><input name="reset" type="reset"></td></tr>
+  </table>
 
+  <input type="hidden" name="<c:out value="${_csrf.parameterName}"/>"
+         value="<c:out value="${_csrf.token}"/>"/>
 </form>
 
 </body>

@@ -13,13 +13,12 @@
     <h1>Exit User</h1>
 
     <c:if test="${not empty param.login_error}">
-      <font color="red">
+      <span style="color: red; ">
         Your 'Exit User' attempt was not successful, try again.<br/><br/>
         Reason: <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/>
-      </font>
+      </span>
     </c:if>
 
-    <form action="<c:url value='logout/impersonate'/>" method="POST">
       <table>
         <tr><td>Current User:</td><td>
 
@@ -31,9 +30,7 @@
 
  <% } %>
          </td></tr>
-        <tr><td colspan='2'><input name="exit" type="submit" value="Exit"></td></tr>
       </table>
       <input type="hidden" name="<c:out value="${_csrf.parameterName}"/>" value="<c:out value="${_csrf.token}"/>"/>
-    </form>
   </body>
 </html>

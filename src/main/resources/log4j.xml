@@ -10,30 +10,34 @@
 		</layout>
 	</appender>
 	
-	<!-- Application Loggers -->
-	<logger name="ru.javabegin.training">
-		<level value="info" />
-	</logger>
-	
-	<!-- 3rdparty Loggers -->
-	<logger name="org.springframework.core">
-		<level value="info" />
-	</logger>
-	
-	<logger name="org.springframework.beans">
-		<level value="info" />
-	</logger>
-	
-	<logger name="org.springframework.context">
-		<level value="info" />
-	</logger>
+	<!--&lt;!&ndash; Application Loggers &ndash;&gt;-->
+	<!--<logger name="ru.javastudy">-->
+		<!--<level value="info" />-->
+	<!--</logger>-->
+	<!-- -->
+	<!--&lt;!&ndash; 3rdparty Loggers &ndash;&gt;-->
+	<!--<logger name="org.springframework.core">-->
+		<!--<level value="info" />-->
+	<!--</logger>-->
+	<!-- -->
+	<!--<logger name="org.springframework.beans">-->
+		<!--<level value="info" />-->
+	<!--</logger>-->
+	<!-- -->
+	<!--<logger name="org.springframework.context">-->
+		<!--<level value="info" />-->
+	<!--</logger>-->
 
-	<logger name="org.springframework.web">
-		<level value="info" />
-	</logger>
-	
-	<logger name="org.springframework.security.web.FilterChainProxy">
-		<level value="debug" />
+	<!--<logger name="org.springframework.web">-->
+		<!--<level value="info" />-->
+	<!--</logger>-->
+	<!-- -->
+	<!--<logger name="org.springframework.security.web.FilterChainProxy">-->
+		<!--<level value="debug" />-->
+	<!--</logger>-->
+
+	<logger name="org.springframework.security.web">
+		<level value="TRACE"/>
 	</logger>
 	
 	

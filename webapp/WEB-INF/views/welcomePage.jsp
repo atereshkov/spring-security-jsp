@@ -1,16 +1,16 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: iMacPC
-  Date: 27.10.2015
-  Time: 22:56
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+<%@ include file="/WEB-INF/views/include.jsp" %>
 
+<html>
+<head><title>Welcome page</title></head>
+
+<body>
+<p>This is welcome file page (webapp\WEB-INF\views\welcomePage.jsp).
+<p>Click button to try security!
+<p>Click me to go inside app!
+  (link handle by MainController)
+  <a href="<c:url value="/second"/>">Go!</a>
+<br>
+<p>Next link for admin only! Try it</p>
+<a href="<c:url value="/admin"/>">AdminPage</a>
 </body>
 </html>
